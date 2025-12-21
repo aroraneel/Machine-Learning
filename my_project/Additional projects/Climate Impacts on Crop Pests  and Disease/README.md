@@ -57,9 +57,9 @@ The analysis is implemented in a **single Jupyter Notebook** with clearly organi
 ---
 
 ## Author
-Neel Arora
+**Neel Arora**  
+BCA Undergraduate | Focused on Artificial Intelligence & Machine Learning  
 
----
+## Notes
+This README provides a brief overview of the project structure and methodology.
 
-## License
-For academic and research use only.
