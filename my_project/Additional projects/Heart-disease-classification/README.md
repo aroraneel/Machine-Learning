@@ -87,6 +87,8 @@ While the accuracy target was not fully met, the analysis provides valuable insi
 **Neel Arora**  
 BCA Undergraduate | Focused on Artificial Intelligence & Machine Learning  
 
+---
+
 ## Notes
 This README provides a brief overview of the project structure and methodology.
 
