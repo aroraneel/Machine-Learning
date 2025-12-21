@@ -76,9 +76,11 @@ The comparison of multiple classifiers provides insights into model behavior and
 ---
 
 ## Author
-Neel Arora
+**Neel Arora**  
+BCA Undergraduate | Focused on Artificial Intelligence & Machine Learning  
 
 ---
 
-## License
-For academic and educational use only.
+## Notes
+This README provides a brief overview of the project structure and methodology.
+
