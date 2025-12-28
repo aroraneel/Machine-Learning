@@ -1,85 +1,115 @@
-# Predicting Heart Disease Using Machine Learning
+# Heart Disease Prediction Using Machine Learning
 
 ## Overview
-This project focuses on **predicting the presence of heart disease** using machine learning techniques.  
-It is an **end-to-end data science and machine learning proof of concept**, covering data exploration, model building, evaluation, and interpretation using a clinical heart disease dataset.
+This project explores the use of **machine learning classification techniques** to predict whether a patient has heart disease based on clinical and demographic attributes.  
+It is designed as an **end-to-end data science proof of concept**, covering data exploration, model building, evaluation, and interpretation.
 
 ---
 
-## Objectives
-- Perform exploratory data analysis (EDA) to understand patient health data  
-- Build and compare multiple machine learning classification models  
-- Tune model hyperparameters to improve performance  
-- Evaluate models using metrics beyond accuracy  
-- Identify key features contributing to heart disease prediction  
+## Problem Statement
+Given clinical parameters about a patient, can we predict whether or not they have **heart disease**?
+
+This is formulated as a **binary classification problem**, where:
+- `1` → Heart disease present  
+- `0` → No heart disease  
 
 ---
 
 ## Dataset
-- **Heart Disease Dataset (`heart.csv`)**
-- Contains clinical attributes such as age, sex, chest pain type, heart rate, cholesterol, and more
+- **heart.csv**
+- Structured tabular dataset with medical attributes such as:
+  - Age, Sex
+  - Chest pain type (cp)
+  - Resting blood pressure
+  - Cholesterol
+  - Maximum heart rate
+  - Exercise-induced angina
+  - ST depression, slope, number of vessels, thalassemia
 - Target variable:
-  - `1` → Heart disease present  
-  - `0` → No heart disease  
+  - `target`
 
 ---
 
-## Project Workflow
-The notebook follows a structured machine learning framework:
+## Exploratory Data Analysis (EDA)
+- Class balance analysis of heart disease outcomes
+- Gender-wise heart disease frequency
+- Age vs maximum heart rate visualization
+- Chest pain type vs heart disease comparison
+- Distribution plots and histograms
+- Correlation matrix and heatmap to study feature relationships
 
-1. Data loading and inspection  
-2. Exploratory Data Analysis (EDA)  
-3. Feature and target separation  
-4. Train–test split  
-5. Model training and comparison  
-6. Hyperparameter tuning  
-7. Model evaluation  
-8. Feature importance analysis  
+EDA is used to build intuition before modeling.
 
 ---
 
-## Models Used
-- Logistic Regression  
-- K-Nearest Neighbors (KNN)  
-- Random Forest Classifier  
-
-The models are compared using accuracy, and the best-performing model is further optimized.
-
----
-
-## Evaluation Metrics
-- Accuracy  
-- Precision  
-- Recall  
-- F1-score  
-- Confusion Matrix  
-- ROC Curve & AUC  
-- Cross-validation scores  
-
-These metrics provide a comprehensive view of model performance beyond simple accuracy.
+## Machine Learning Models
+The following classification models are trained and compared:
+- **Logistic Regression**
+- **K-Nearest Neighbors (KNN)**
+- **Random Forest Classifier**
 
 ---
 
-## Key Findings
-- Logistic Regression performed best among tested models  
-- Hyperparameter tuning improved model performance  
-- Several features (e.g., sex, slope, chest pain type) strongly influence predictions  
-- The final model achieved strong performance but did not reach the 95% target accuracy  
+## Model Training
+- Features and target separated
+- Data split into training and testing sets (80/20)
+- Baseline models trained and evaluated
+- Model comparison based on accuracy
+
+---
+
+## Hyperparameter Tuning
+- **KNN**: Tuned number of neighbors manually
+- **Logistic Regression**: Tuned using RandomizedSearchCV and GridSearchCV
+- **Random Forest**: Tuned using RandomizedSearchCV
+
+Hyperparameter tuning improves model performance and robustness.
+
+---
+
+## Model Evaluation
+Evaluation goes beyond accuracy and includes:
+- Confusion Matrix (numeric and visual)
+- Classification Report
+- Precision
+- Recall
+- F1-score
+- ROC Curve and AUC
+- Cross-validation with multiple scoring metrics
+
+These metrics provide a deeper understanding of model performance.
+
+---
+
+## Feature Importance
+- Feature importance extracted from Logistic Regression coefficients
+- Visualization of how each feature contributes to predictions
+- Helps interpret which medical attributes are most influential
+
+---
+
+## Results & Insights
+- Logistic Regression performs best among tested models
+- Model achieves strong but sub-95% accuracy
+- Certain features (e.g., sex, slope, chest pain) show strong influence
+- Demonstrates the importance of model evaluation beyond accuracy
+
+---
+
+## Future Improvements
+- Collect more data to improve generalization
+- Experiment with advanced models such as XGBoost or CatBoost
+- Perform deeper feature engineering
+- Export and deploy the trained model for real-world use
 
 ---
 
 ## Tools & Technologies
 - Python  
-- Jupyter Notebook  
-- Pandas, NumPy  
-- Matplotlib, Seaborn  
+- Pandas & NumPy  
+- Matplotlib & Seaborn  
 - Scikit-learn  
-
----
-
-## Conclusion
-This project demonstrates a complete machine learning workflow for a healthcare classification problem.  
-While the accuracy target was not fully met, the analysis provides valuable insights into model behavior, feature importance, and next steps for improvement.
+- Jupyter Notebook / VS Code  
 
 ---
 
@@ -87,8 +117,5 @@ While the accuracy target was not fully met, the analysis provides valuable insi
 **Neel Arora**  
 BCA Undergraduate | Focused on Artificial Intelligence & Machine Learning  
 
----
-
 ## Notes
 This README provides a brief overview of the project structure and methodology.
-
