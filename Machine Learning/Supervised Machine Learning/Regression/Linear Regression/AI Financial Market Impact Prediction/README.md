@@ -1,55 +1,64 @@
-# AI Financial Market Impact Prediction using Linear Regression
+# AI Financial Market Impact Analysis using Linear Regression
 
 ## Overview
-This project uses **Linear Regression** to analyze how AI-related business factors influence stock market performance.  
-The model predicts **Stock Impact (%)** based on company-level AI investment and revenue metrics.
+This project applies **Linear Regression** to analyze the relationship between **AI-related financial metrics** and company representation in a synthetic financial market dataset.  
+The focus is on understanding how investment and revenue indicators relate to market impact signals.
 
 ---
 
 ## Objective
-- Understand the relationship between AI spending and stock impact  
-- Apply linear regression on financial data  
-- Evaluate model performance using R² score  
+- Analyze AI financial indicators using linear regression  
+- Explore relationships between R&D spending, AI revenue, and stock impact  
+- Evaluate model performance using the R² metric  
 
 ---
 
 ## Dataset
-- **Synthetic financial market dataset**
-- Features used:
+- **ai_financial_market_daily_realistic_synthetic.csv**
+- Categorical columns:
+  - `Company` (encoded numerically)
+- Numerical features used:
   - `R&D_Spending_USD_Mn`
   - `AI_Revenue_USD_Mn`
   - `AI_Revenue_Growth_%`
-- Target:
   - `Stock_Impact_%`
-- Date column removed during preprocessing
+
+---
+
+## Data Preprocessing
+- Dropped non-numeric and irrelevant columns (`Date`, `Event`)  
+- Encoded company names into numeric values  
+- Removed missing values  
 
 ---
 
 ## Methodology
-- Data preprocessing using Pandas  
-- Train-test split (70% train, 30% test)  
-- Model training using Scikit-learn’s Linear Regression  
-- Performance evaluation using R² score  
+- Feature and target selection  
+- Train-test split (80–20)  
+- Model training using Linear Regression  
+- Prediction on test data  
+- Evaluation using **R² score**
 
 ---
 
 ## Evaluation Metric
-- **R² Score** to measure regression accuracy  
+- **R² Score** to measure model fit  
 
 ---
 
-## Tools Used
+## Tools & Technologies
 - Python  
 - Pandas  
+- NumPy  
 - Scikit-learn  
 
 ---
 
 ## Author
 **Neel Arora**  
-BCA Undergraduate | AI & Machine Learning  
+BCA Undergraduate | Focused on Artificial Intelligence & Machine Learning  
 
 ---
 
 ## Notes
-This project demonstrates a simple regression-based approach to study AI-driven financial market impact.
+This project demonstrates linear regression applied to financial indicators and highlights preprocessing steps required for mixed-type datasets.
