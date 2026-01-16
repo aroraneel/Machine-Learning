@@ -1,74 +1,63 @@
-# Superconductivity Prediction Using Elastic Net Regression
+# Superconductivity Critical Temperature Prediction using ElasticNet Regression
 
 ## Overview
-This project uses **machine learning regression** to predict the **critical temperature of superconductors** based on their chemical and physical properties.  
-It demonstrates an end-to-end **regression workflow** using the Superconductivity dataset from OpenML.
+This project predicts the **critical temperature (`critical_temp`) of superconducting materials** using **ElasticNet Regression with Polynomial Features**.  
+ElasticNet combines **L1 (Lasso)** and **L2 (Ridge)** regularization, making it well-suited for **high-dimensional scientific datasets** with correlated features.
+
+A complete **machine learning pipeline** is used for preprocessing, feature engineering, and model training.
 
 ---
 
 ## Objective
-To predict the **critical temperature (`critical_temp`)** of superconducting materials using numerical material descriptors.
-
-This is formulated as a **regression problem**.
+- Predict superconducting critical temperature from material properties  
+- Handle high-dimensional and correlated features effectively  
+- Reduce overfitting using ElasticNet regularization  
+- Capture non-linear relationships using polynomial features  
 
 ---
 
 ## Dataset
-- **Source:** OpenML – *Superconductivity Dataset*
-- Loaded using `fetch_openml`
-- Contains a large number of **material composition and physical features**
+- **Superconduct Dataset** (via OpenML)
+- Features:
+  - Atomic, electronic, thermal, and valence-related properties  
+  - Includes statistical descriptors such as mean, weighted mean, entropy, range, and standard deviation  
 - Target variable:
-  - `critical_temp` (continuous value)
+  - `critical_temp`
 
 ---
 
-## Features
-The model uses multiple numerical features, including:
-- Atomic mass statistics
-- Atomic radius statistics
-- Density-related features
-- Electron affinity
-- Fusion heat
-- Thermal conductivity
-- Valence-related properties
-
-All features are numeric and suitable for regression.
+## Data Preprocessing
+- Checked and handled missing values using **median imputation**  
+- Standardized features for stable optimization  
+- Used polynomial feature expansion (degree = 2)  
 
 ---
 
-## Machine Learning Model
-- **Elastic Net Regression**
-  - Combines **Lasso (L1)** and **Ridge (L2)** regularization
-  - Helps handle multicollinearity and feature selection
-- Model configuration:
-  - `alpha = 0.1`
+## Methodology
+- Train-test split (80–20)  
+- Optimal regularization parameter selected using **ElasticNetCV**  
+- Built a pipeline with:
+  - Median imputation  
+  - Feature scaling  
+  - Polynomial feature generation  
+  - ElasticNet regression with best alpha  
+- Generated predictions on unseen test data  
 
 ---
 
-## Training Process
-- Dataset split into training and testing sets (80/20)
-- Model trained on training data
-- Predictions generated on test data
+## Evaluation
+- **R² Score** used to evaluate regression performance  
+- Scatter plot comparing actual vs predicted critical temperatures  
 
 ---
 
-## Evaluation Metric
-- **R² Score (Coefficient of Determination)**
-  - Measures how well predictions explain variance in target values
-- Visualization:
-  - Scatter plot of **Actual vs Predicted** values
-  - Reference line for perfect prediction
+## Visualization
+- Actual vs Predicted Critical Temperature plot  
+- Reference line indicating perfect prediction  
 
 ---
 
-## Results
-- The model provides a reasonable fit for predicting critical temperature
-- Elastic Net helps manage high-dimensional feature space
-- Visualization highlights prediction accuracy and error spread
-
----
-
-## Tools & Libraries
+## Tools & Technologies
 - Python  
 - Pandas  
 - NumPy  
@@ -81,5 +70,7 @@ All features are numeric and suitable for regression.
 **Neel Arora**  
 BCA Undergraduate | Focused on Artificial Intelligence & Machine Learning  
 
+---
+
 ## Notes
-This README provides a brief overview of the project structure and methodology.
+This project demonstrates the effectiveness of ElasticNet regression for complex, high-dimensional scientific datasets and highlights the importance of regularization in materials science prediction tasks.
